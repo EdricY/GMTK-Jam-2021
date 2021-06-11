@@ -1,0 +1,56 @@
+<style>
+  body {
+    background-color: #444;
+    margin: 0;
+    width: 100vw;
+    min-height: 100vh;
+  }
+  #menu {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    min-height: 100vh;
+  }
+  #credits {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    min-height: 100vh;
+  }
+  #game {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  #canvas {
+    width: 100vmin;
+    height: 100vmin;
+  }
+
+  .nodisplay {
+    display: none !important;
+  }
+</style>
+<title>GMTK Jam 2021</title>
+<body>
+  <div id="menu">
+    Menu!!!
+    <button id="playBtn" disabled>Play!</button>
+    <button id="creditsBtn">Credits</button>
+  </div>
+  <div id="credits" class="nodisplay">
+    <span>There are credits here.</span>
+    <button id="creditsBackBtn">Go Back</button>
+  </div>
+  <div id="game" class="nodisplay">
+    <canvas id="canvas"></canvas>
+  </div>
+</body>
+<script src="../dist/game.js"></script>
