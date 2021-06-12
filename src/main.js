@@ -81,11 +81,11 @@ export function onCanvasClick() {
   let infoImg = getEl("infoImage");
   let infoName = getEl("infoName");
 
-  if (tile.draw) {
+  if (tile.isHouse) {
     if (actionPanel.currentObj) {
-      actionPanel.setCompareInfo(imgSources.anemone, "Anemone", "Stuff");
+      actionPanel.setCompareInfo(imgSources.anemone, tile.name, "Cost: " + tile.basePrice, tile);
     } else {
-      actionPanel.setInfo(imgSources.anemone, "Anemone", "Stuff");
+      actionPanel.setInfo(imgSources.anemone, tile.name, "Stuff");
     }
     // populate info box...
     // infoContent.innerText = "This is grass, it doesn't do much.";

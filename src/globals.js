@@ -28,6 +28,53 @@ export const inBounds = (i, j) => {
   return true;
 };
 
+export const houseNames = [
+  'Anemone Place',
+  'Fishers Palace',
+  'Riverswood Mansion',
+  'Stonewill Residence',
+  'Wild Willow Estate',
+  'Troutriver Mansion',
+  'Beechbury Residence',
+  'Foreherd Chateau',
+  'Suldal Estate',
+  'Remlins Residence',
+  'Pardel Manor',
+  'Nordon Chateau',
+  'Grapevine Manor',
+  'Graceville Manor',
+  'Edgeriver Manor',
+  'Froglake Estate',
+  'Summergrove Chateau',
+  'Livingtero Manor',
+  'Fullercard Chateau',
+  'Consworth Chateau',
+  'Sinrett Chateau',
+  'Buckfort Chateau',
+  'Ivywood Mansion',
+  'Newpoint Mansion',
+  'Eastmeadow Chateau',
+  'Gracewoods Estate',
+  'Seapoint Residence',
+  'Mauner Manor',
+  'Mulsay Residence',
+  'Pakennelly Mansion',
+  'Colerene Chateau',
+  'Rothsnor Residence',
+  'Castle Hill Residence',
+  'Starlight Residence',
+  'Evergreen Valley Estate',
+  'Crow Valley Chateau',
+  'Blossomfall Mansion',
+  'Blanson Manor',
+  'Goldrow Manor',
+  'Rainnell Estate',
+  'Warridge Manor',
+  'Coulton Manor',
+]
+
+export const availableHouseNames = JSON.parse(JSON.stringify(houseNames));
+
 export const names = [
   "Oscar Smith",
   "Don Lino",

@@ -1,4 +1,4 @@
-import { TLONGDIAG } from "./globals";
+import { TLONGDIAG, availableHouseNames } from "./globals";
 import { imgs } from "./load";
 import { randInt, tileLocToScreenXY } from "./math";
 
@@ -12,7 +12,12 @@ export default class BasicAnemone {
     this.x = x;
     this.y = y;
 
+    let houseNameIndex = Math.floor(Math.random() * availableHouseNames.length);
+    this.name = availableHouseNames[houseNameIndex];
+    availableHouseNames.splice(houseNameIndex, 1);
     this.imgname = "anemone";
+
+    this.isHouse = true;
   }
 
   cycle() {}
