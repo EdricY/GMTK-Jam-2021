@@ -110,6 +110,8 @@ button:active {
   display: block;
   border-style: solid;
   object-fit: contain;
+  border-top: 0;
+  border-left: 0;
 }
 
 .infoName {
@@ -154,4 +156,8 @@ button:active {
 .vl {
   border-left: 3px solid aquamarine;
   height: 100%;
+}
+
+.space-between {
+  justify-content: space-between;
 }

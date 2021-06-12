@@ -8,6 +8,7 @@ import { shell, shellNumber, shellPickup } from "./shell";
 import { Applicant } from "./applicant";
 import { applicantSpawner, ApplicantSpawner } from "./applicantSpawner";
 import { setupButtons } from "./buttons";
+import { actionPanel, ActionPanel } from "./actionPanel";
 
 function loadTick(frac) {
   console.log(frac);
@@ -65,6 +66,8 @@ export function onCanvasClick() {
   let tile = null;
   if (inBounds(i, j)) {
     tile = mapData[i][j];
+  } else {
+    actionPanel.setCompareInfo();
   }
 
   if (i == shell.i && j == shell.j) {
@@ -79,10 +82,17 @@ export function onCanvasClick() {
   let infoName = getEl("infoName");
 
   if (tile.draw) {
+    if (actionPanel.currentObj) {
+      actionPanel.setCompareInfo(imgSources.anemone, "Anemone", "Stuff");
+    } else {
+      actionPanel.setInfo(imgSources.anemone, "Anemone", "Stuff");
+    }
     // populate info box...
     // infoContent.innerText = "This is grass, it doesn't do much.";
     // infoName.innerText = "Grass";
     // infoImg.src = imgSources.grass;
+  } else {
+    actionPanel.setCompareInfo();
   }
 }
 

@@ -90,6 +90,7 @@ Goal: Buy the mansion, get a specific celeberty? tenant to stay in it for 1 year
     - Add house problems that need to be fixed
     - End Game (buy the BIG anemone)
     - Score? (how many days it took?)
+    - Tutorial
     - Polish
 
 4) get and add music

@@ -30,17 +30,25 @@
         <canvas id="canvas"></canvas>
       </div>
       <div class="infoBox">
-        <div class="row" style="justify-content: space-between;">
-          <img id="infoImage" class="infoImage" src="./assets/anemone.png" />
-          <h2 id="infoName" class="infoName">adsf</h2>
-          <div id="infoCompareLine1" class="vl"></div>
-          <h2 id="infoCompareName" class="infoName">adsf</h2>
-          <img id="infoCompareImage" class="infoImage" src="./assets/anemone.png" />
+        <div id="infoRow" class="row">
+          <div class="row">
+            <img id="infoImage" class="infoImage" src="./assets/anemone.png" />
+            <h2 id="infoName" class="infoName">adsf</h2>
+          </div>
+          <div id="infoCompareLine1" class="nodisplay vl"></div>
+          <div class="row">
+            <img id="infoCompareImage" class="nodisplay infoImage" src="./assets/anemone.png" />
+            <h2 id="infoCompareName" class="nodisplay infoName">adsf</h2>
+          </div>
         </div>
         <div class="row" style="justify-content: space-between; height: 100%;">
-          <p id="infoContent">Info about the house</p>
-          <div id="infoCompareLine2" class="vl"></div>
-          <p id="infoCompareContent">Info about the house</p>
+          <div class="row">
+            <p id="infoContent">Info about the house</p>
+          </div>
+          <div id="infoCompareLine2" class="nodisplay vl"></div>
+          <div class="row">
+            <p id="infoCompareContent" class="nodisplay">Info about the house</p>
+          </div>
         </div>
         <!-- <div class="row">
           <p id="infoName" style="margin-left: 10px">THis is a HOUSE</p>

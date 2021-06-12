@@ -1,5 +1,6 @@
 import { getEl, names } from "./globals";
 import { Applicant } from "./applicant";
+import { actionPanel, ActionPanel } from "./actionPanel";
 
 const applicantTime = 100;
 
@@ -18,7 +19,10 @@ export class ApplicantSpawner {
       return;
     }
 
-    this.applicants[this.currentApplicant].setApplicantInfo();
+    let applicant = this.applicants[this.currentApplicant];
+
+    actionPanel.setInfo(applicant.img, applicant.name, applicant.content, applicant);
+
     this.currentApplicant++;
     if (this.currentApplicant >= this.applicants.length) {
       this.currentApplicant = 0;
@@ -57,6 +61,10 @@ export class ApplicantSpawner {
       this.applicants[applicantIndex].expire();
       this.applicants.splice(applicantIndex - index, 1);
     });
+
+    if (this.currentApplicant >= this.applicants.length) {
+      this.currentApplicant = 0;
+    }
   }
 }
 

@@ -5,6 +5,8 @@ const applicationExpireTime = 500;
 export class Applicant {
   constructor(name) {
     this.name = name;
+    this.img = "./assets/house.png"
+    this.content = "<ul><li>A thing</li><li>Another thing</li></ul>"
     this.expireTime = applicationExpireTime * Math.random();
     this.addToApplicants();
   }
@@ -12,16 +14,6 @@ export class Applicant {
   addToApplicants() {
     let applicantCount = getEl("applicantCount");
     applicantCount.innerText = Number(applicantCount.innerText) + 1;
-  }
-
-  setApplicantInfo() {
-    let infoContent = getEl("infoContent");
-    let infoImg = getEl("infoImage");
-    let infoName = getEl("infoName");
-
-    infoContent.innerText = "More Details";
-    infoImg.src = "";
-    infoName.innerText = this.name;
   }
 
   expire() {
