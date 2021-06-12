@@ -1,6 +1,8 @@
 const imgSources = {
   // list image files files here
   grass: "./assets/grass.png",
+  road: "./assets/road.png",
+  house: "./assets/house.png",
 };
 
 const audioSources = {

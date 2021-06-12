@@ -1,4 +1,4 @@
-import { HALFRT2, HALFSIZE, TSIZE, SIZE } from "./globals";
+import { HALFRT2, HALFSIZE, TSIZE, N, SIZE } from "./globals";
 
 // rotate (x,y) 45 degrees clockwise(?) about (a,b)
 export function rotate45(x, y, a = 0, b = 0) {
@@ -22,7 +22,7 @@ export function tileLocToScreenXY(i, j) {
 }
 
 export function screenXYtoTileLoc(x, y) {
-  const scaledY = 2 * (y - HALFSIZE) + HALFSIZE;
+  const scaledY = (y - HALFSIZE) * 2 + HALFSIZE;
   const rotatedPt = rotate45CC(x, scaledY, HALFSIZE, HALFSIZE);
 
   rotatedPt[0] /= TSIZE;
