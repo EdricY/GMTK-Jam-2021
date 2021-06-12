@@ -6,7 +6,7 @@ const sandStretch = TLONGDIAG / 92; // imgs.sand.width
 
 export default class BasicAnemone {
   constructor(i, j) {
-    this.basePrice = 1000 + randInt(-100, 100);
+    this.basePrice = 100 + randInt(-100, 100);
     this.tenant = null;
     const [x, y] = tileLocToScreenXY(i, j);
     this.x = x;
