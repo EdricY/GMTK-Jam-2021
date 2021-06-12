@@ -1,56 +1,52 @@
-<style>
-  body {
-    background-color: #444;
-    margin: 0;
-    width: 100vw;
-    min-height: 100vh;
-  }
-  #menu {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
-    min-height: 100vh;
-  }
-  #credits {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
-    min-height: 100vh;
-  }
-  #game {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>GMTK Jam 2021</title>
+  </head>
 
-  #canvas {
-    width: 100vmin;
-    height: 100vmin;
-  }
-
-  .nodisplay {
-    display: none !important;
-  }
-</style>
-<title>GMTK Jam 2021</title>
-<body>
-  <div id="menu">
-    Menu!!!
-    <button id="playBtn" disabled>Play!</button>
-    <button id="creditsBtn">Credits</button>
-  </div>
-  <div id="credits" class="nodisplay">
-    <span>There are credits here.</span>
-    <button id="creditsBackBtn">Go Back</button>
-  </div>
-  <div id="game" class="nodisplay">
-    <canvas id="canvas"></canvas>
-  </div>
-</body>
-<script src="../dist/game.js"></script>
+  <body>
+    <div id="menu">
+      Menu!!!
+      <button id="playBtn" disabled>Play!</button>
+      <button id="creditsBtn">Credits</button>
+    </div>
+    <div id="credits" class="nodisplay">
+      <span>There are credits here.</span>
+      <button id="creditsBackBtn">Go Back</button>
+    </div>
+    <div id="game" class="nodisplay">
+      <div class="infoBar">
+        <span class="label">Shells:</span>
+        <span id="shellCount">0</span>
+        <span class="label">Applicant(s):</span>
+        <span id="applicantCount">0</span>
+        <button id="viewNextApplicantBtn">View Next</button>
+      </div>
+      <div class="canvasWrap square">
+        <canvas id="canvas"></canvas>
+      </div>
+      <div class="infoBox">
+        <div class="row">
+          <img id="infoImage" src="./assets/anemone.png" />
+          <div id="infoName">adsf</div>
+        </div>
+        <!-- <div class="row">
+          <p id="infoName" style="margin-left: 10px">THis is a HOUSE</p>
+        </div>
+        <div class="row">
+          <p id="infoContent">Info about the house</p>
+        </div>
+        <div class="row" style="justify-content: flex-end">
+        </div> -->
+        <div class="button-row">
+          <button id="buyBtn">Buy</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../dist/game.js"></script>
+</html>

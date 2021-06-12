@@ -1,8 +1,11 @@
-const imgSources = {
+export const imgSources = {
   // list image files files here
   grass: "./assets/grass.png",
   road: "./assets/road.png",
   house: "./assets/house.png",
+  shell: "./assets/shell.png",
+  sand: "./assets/sand.png",
+  anemone: "./assets/anemone.png",
 };
 
 const audioSources = {

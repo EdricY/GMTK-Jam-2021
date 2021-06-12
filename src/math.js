@@ -29,3 +29,9 @@ export function screenXYtoTileLoc(x, y) {
   rotatedPt[1] /= TSIZE;
   return rotatedPt;
 }
+
+// random integer x where a <= x <= b
+export function randInt(a, b) {
+  const range = b - a + 1;
+  return a + Math.floor(Math.random() * range);
+}

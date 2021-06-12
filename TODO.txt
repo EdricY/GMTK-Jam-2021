@@ -1,0 +1,123 @@
+TODO
+
+X 1) Finish the tile engine
+- Edric does math
+
+2) Brainstorm game ideas
+- Quantum entanglement
+
+    ~ One object's state cannot be described independently from another.
+        ~ One object is on fire, entangle it with another object to lit that on fire
+    
+    ~ maze? or the state of the board?
+
+- X Real Estate X
+
+- Body + soul
+    ~ puzzle game where you do different parts with the body and the soul
+
+- Searching for someone
+
+-- Real Estate --
+Goal?: To make money? 
+
+Controls: Point and click. Sadly lots of UI.
+
+Mechanics: 
+
+Sea Anemone and Clownfish
+you are an octopus with a suit and bow tie
+
+- Symbiotes 
+    ~ upgrade the "houses" by having tenants stay in them.
+    ~ goal is to upgrade everything?
+    ~ sea shells currency
+    ~ start by picking up shells from the squares
+
+LANDLORD simulator ON MARS?
+
+Goal: Buy the mansion, get a specific celeberty? tenant to stay in it for 1 year.
+- House has a problem, pay to repair it
+- Pay property tax to the shark
+- Buy more houses
+- Sell houses
+- Manage money
+- Renters
+    - Couples and families
+    - Applications
+    - Different applicants will increase or decrease the value of the property depending on their traits
+       
+
+    - People leave super quick if it is a bad fit. the value of the property goes down.
+
+    - House and people have different traits, best trait match means higher payoff and more likely for someone to buy
+        ~ cost
+        ~ location
+        ~ size
+        ~ value
+        ~ live with others?
+    - People and houses randomly generate
+    - Houses are static?
+    - People come and go?
+        ~ They reject offers that are too bad? 
+    - Timed?
+        ~ lose money over time?
+        ~ Look at stats at the end of each day? Like Papers please? 
+    - Move to richer neighborhood once you reach a money threshold
+- Community?
+    ~ if you get a neighborhood to all have tenant that stay for 1 year the value goes up a ton or something
+- Property tax goes up every month.
+- Utilies go up every month.
+- You can raise rent OR sell to pay
+- Evict tenants so you can accept a new better application
+
+- Upgrade houses? UPGRADE TO A MANSION
+- If you sell or if you go into debt you lose properties? should feel bad?
+- mortgages
+- Some houses can hold more than 1 tenant
+
+- Cheeky: the button to accept an application is "join" :D
+
+3) implement game ideas
+    - X Money collection by clicking on the squares
+    - X (LUKE) UI for clicking on a houses
+    - X (LUKE) UI for applicants
+    - First pass at property value going up and down
+    - Ability to buy a house
+    - Ability to sell a house
+    - End of month UI with taxes
+    - Add house problems that need to be fixed
+    - End Game (buy the BIG anemone)
+    - Score? (how many days it took?)
+
+4) get and add music
+- Brendan?
+- Play the music in the game
+
+5) make and add art
+- Fish tenants
+- Anemone Houses
+- Loan shark
+- octopus LANDLORD
+- Whale Goverment person
+- squid handyman
+- ocean floor tiles
+- UI stuff? custom buttons? 
+
+6) make and add sound effects
+- Buying a house
+- Selling a house
+- clicking a button
+- clicking on a tile
+- losing money
+- gaining money
+
+7) Bug fix
+
+8) polish
+- more diversity in sprites
+  - ground
+  - shell
+
+
+9) Submit
