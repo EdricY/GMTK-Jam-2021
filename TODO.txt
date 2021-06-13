@@ -77,25 +77,33 @@ Goal: Buy the mansion, get a specific celeberty? tenant to stay in it for 1 year
 - Some houses can hold more than 1 tenant
 
 - Cheeky: the button to accept an application is "join" :D
+- join buildings with roads
 
 3) implement game ideas
     - X Money collection by clicking on the squares
     - X (LUKE) UI for clicking on a houses
     - X (LUKE) UI for applicants
-    - (LUKE) Add applicant to house
-    - First pass at property value going up and down
-    - Ability to buy a house
-    - Ability to sell a house
-    - End of month UI with taxes
-    - Add house problems that need to be fixed
-    - End Game (buy the BIG anemone)
-    - Score? (how many days it took?)
+    - X Add applicant to house
+    - X (LUKE) First pass at property value going up and down
+    - X (LUKE) Ability to buy a house
+    - X (LUKE) Ability to sell a house
+    - X add a second anemone type
+    - X add trait and tweak how they affect prices/breakdowns
+    - X Communicate to the user when they can't select stuff
+    - X timer bar for applicants
+    - X End of month UI with taxes
+    - X Get paid every day!
+    - X End Game (buy the BIG anemone)
+    - roads
+    - X Add house problems that need to be fixed
     - Tutorial
     - Polish
+    - X (LUKE) Reset
+    - X (LUKE)Evict
 
-4) get and add music
-- Brendan?
-- Play the music in the game
+4) X get and add music
+- X Brendan?
+- X Play the music in the game
 
 5) make and add art
 - Fish tenants
@@ -108,19 +116,38 @@ Goal: Buy the mansion, get a specific celeberty? tenant to stay in it for 1 year
 - UI stuff? custom buttons? 
 
 6) make and add sound effects
-- Buying a house
-- Selling a house
-- clicking a button
+- X Buying a house
+- X Selling a house
+- X clicking a button
 - clicking on a tile
-- losing money
-- gaining money
+- X losing money
+- X gaining money
 
 7) Bug fix
 
 8) polish
-- more diversity in sprites
-  - ground
-  - shell
+- X bubbles on click
+- X wavy anemone animation
+- X more diversity in sprites
+- X credits
+- X Tenant state? Happy vs not Happy depending on the value modifier
+- X A way to tell if a property breaks? Or maybe take this out entirely.
 
+- X glowing road / houses when connected - more particles for higher uf house number
+- better corner image crop
+- X tutorial text
+- X die text
+- X better markup
+- X road sprite
+- number tweaking
+
+
+- shark sound effect?
+- colored tenant/house attribute
+- fishy names
+- overly pretentious property names
+- better win animation
+- levels
+- Score? (how many days it took?)
 
 9) Submit

@@ -1,5 +1,7 @@
-import { canvas } from "./globals";
+import { actionPanel } from "./actionPanel";
+import { canvas, inBounds } from "./globals";
 import { onCanvasClick } from "./main";
+import { map } from "./map";
 
 export const cursor = { x: -1, y: -1 };
 
@@ -21,3 +23,18 @@ export const setupCursor = () => {
     onCanvasClick();
   });
 };
+
+export function drawCursorTile(ctx, i, j) {
+  if (!inBounds(i, j)) return;
+  if (actionPanel.currentPanelType == "eom") {
+    return;
+  }
+  if (actionPanel.currentPanelType == "applicant") {
+    if (map.mapData[i][j]?.owned) {
+      map.strokeLoc(ctx, i, j, "red", 5);
+    }
+    return;
+  }
+  map.strokeLoc(ctx, i, j, "red", 2);
+  return;
+}

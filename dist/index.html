@@ -10,59 +10,165 @@
 
   <body>
     <div id="menu">
-      Menu!!!
+      <h1>
+        Symbiotic Manager
+      </h1>
       <button id="playBtn" disabled>Play!</button>
       <button id="creditsBtn">Credits</button>
     </div>
     <div id="credits" class="nodisplay">
-      <span>There are credits here.</span>
+      <div>Thanks for playing! <span id="winner" class="nodisplay">Such a winner! 😊</span></div>
+      <div>Made by</div>
+      <div>Edric (<a href="https://github.com/EdricY">github.com/EdricY</a>)</div>
+      <div>and</div>
+      <div>Luke (<a href="https://github.com/bromlu">github.com/bromlu</a>)</div>
+      <div>with music by</div>
+      <div>Brendan (<a href="https://soundcloud.com/astronun">soundcloud.com/astronun</a>)</a></div>
       <button id="creditsBackBtn">Go Back</button>
     </div>
     <div id="game" class="nodisplay">
       <div class="infoBar">
-        <span class="label">Shells:</span>
-        <span id="shellCount">0</span>
-        <span class="label">Applicant(s):</span>
-        <span id="applicantCount">0</span>
-        <button id="viewNextApplicantBtn">View Next</button>
+        <span>
+          Shells:
+          <span id="shellCount">0</span>
+        </span>
+        <span>
+          Date:
+          <span id="date">Amphitrite 1</span>
+        </span>
+        <span>
+          Applicants:
+          <span id="applicantCount">0</span>
+        </span>
+        <button id="viewNextApplicantBtn">View Applicant</button>
       </div>
       <div class="canvasWrap square">
         <canvas id="canvas"></canvas>
       </div>
-      <div class="infoBox">
-        <div id="infoRow" class="row">
-          <div class="row">
-            <img id="infoImage" class="infoImage" src="./assets/anemone.png" />
-            <h2 id="infoName" class="infoName">adsf</h2>
-          </div>
-          <div id="infoCompareLine1" class="nodisplay vl"></div>
-          <div class="row">
-            <img id="infoCompareImage" class="nodisplay infoImage" src="./assets/anemone.png" />
-            <h2 id="infoCompareName" class="nodisplay infoName">adsf</h2>
-          </div>
+      <div id="infoBox-welcome" class="infoBox">
+        <img class="sharkimg" src="./assets/shark.png" alt="shark" />
+        <div id="welcomeMsg"></div>
+        <div class="button-row">
+          <button id="welcomeBtn">Continue</button>
         </div>
-        <div class="row" style="justify-content: space-between; height: 100%;">
-          <div class="row">
-            <p id="infoContent">Info about the house</p>
-          </div>
-          <div id="infoCompareLine2" class="nodisplay vl"></div>
-          <div class="row">
-            <p id="infoCompareContent" class="nodisplay">Info about the house</p>
-          </div>
+      </div>
+
+      <div id="infoBox-house" class="infoBox">
+        <div class="row align-center">
+          <img id="image-house" class="infoImage" src="./assets/anemone-pink.png" />
+          <span id="name-house" class="infoName">House Name</span>
         </div>
-        <!-- <div class="row">
-          <p id="infoName" style="margin-left: 10px">THis is a HOUSE</p>
+        <div class="houseDetails">
+          <ul>
+            <li class="infoDetails">Value: <span id="value-house"></span></li>
+            <li class="infoDetails">Rent: <span id="rent-house"></span></li>
+            <li class="infoDetails">Location: <span id="location-house"></span></li>
+            <li class="infoDetails">Maintenance: <span id="maintenance-house"></span></li>
+            <li class="infoDetails">Occupant: <span id="occupant-house"></span></li>
+          </ul>
         </div>
-        <div class="row">
-          <p id="infoContent">Info about the house</p>
-        </div>
-        <div class="row" style="justify-content: flex-end">
-        </div> -->
         <div class="button-row">
           <button id="buyBtn">Buy</button>
         </div>
       </div>
+
+      <div id="infoBox-property" class="infoBox">
+        <div class="row align-center">
+          <img id="image-property" class="infoImage" src="./assets/anemone-pink.png" />
+          <span id="name-property" class="infoName">Property Name</span>
+        </div>
+        <div class="propertyDetails">
+          <ul>
+            <li class="infoDetails">Value: <span id="value-property"></span></li>
+            <li class="infoDetails">Rent: <span id="rent-property"></span></li>
+            <li class="infoDetails">Location: <span id="location-property"></span></li>
+            <li class="infoDetails">Maintenance: <span id="maintenance-property"></span></li>
+            <li class="infoDetails">Occupant: <span id="occupant-property"></span></li>
+          </ul>
+        </div>
+        <div class="button-row">
+          <button id="sellBtn">Sell</button>
+          <button id="evictBtn">Evict</button>
+          <button id="repairBtn">Repair</button>
+        </div>
+      </div>
+
+      <div id="infoBox-applicant" class="infoBox">
+        <div class="row fill">
+          <div class="half">
+            <div class="row align-center">
+              <img id="image-applicant" class="infoImage" src="./assets/road.png" />
+              <span id="name-applicant" class="infoName">Person Name</span>
+            </div>
+            <div class="progressBorder">
+              <div class="progress" id="appProgress"></div>
+            </div>
+            <div class="tenantDetails">
+              Preferences
+              <ul>
+                <li class="infoDetails">Location:<span id="location-applicant"></span></li>
+                <li class="infoDetails">Hardiness:<span id="maintenance-applicant"></span></li>
+                <li class="infoDetails">Color:<span id="color-applicant"></span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="half residenceHalf">
+            <div class="row align-center">
+              <img id="image-residence" class="infoImage" src="./assets/question.png" />
+              <span id="name-residence" class="infoName">Select an owned Residence</span>
+            </div>
+            <div class="residenceDetails">
+              <ul>
+                <li class="infoDetails">Value:<span id="value-residence"></span></li>
+                <li class="infoDetails">Rent:<span id="rent-residence"></span></li>
+                <li class="infoDetails">Location:<span id="location-residence"></span></li>
+                <li class="infoDetails">Maintenance:<span id="maintenance-residence"></span></li>
+                <li class="infoDetails">Occupant:<span id="occupant-residence"></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="button-row">
+          <button id="joinBtn">Join</button>
+          <button id="denyBtn">Deny</button>
+        </div>
+      </div>
+
+      <div id="infoBox-sand" class="infoBox">
+        <div id="stats-sand" class="stats">
+          <div class="row align-center">
+            <img id="image-sand" class="infoImage" src="./assets/sand.png" />
+            <span id="name-sand" class="infoName">Sand</span>
+          </div>
+          <div id="details-sand" class="details">It's sand I guess</div>
+        </div>
+        <div id="roadBtnRow" class="button-row">
+          <button id="roadBtn">Build a road (<span id="roadCost">50</span>)</button>
+        </div>
+      </div>
+
+      <div id="infoBox-eom" class="infoBox">
+        <img class="sharkimg" src="./assets/shark.png" alt="shark" />
+        <div class="progressBorder" id="sharkProgressBorder">
+          <div class="progress" id="sharkProgress"></div>
+        </div>
+        <div class="text-center" id="sharkMsg">The loan shark is here!</div>
+
+        <div class="button-row" id="sharkPayBtns">
+          <button id="payEomBtn">Pay up</button>
+          <button id="laterBtn">Uhh... can I pay you later?</button>
+        </div>
+        <div class="button-row" id="sharkMsgBtns">
+          <button id="dismissSharkBtn">Ok</button>
+        </div>
+      </div>
+
+      <div id="infoBox-dead" class="infoBox">
+        <img class="sharkimg" src="./assets/shark.png" alt="shark" />
+        <div id="deadMsg"></div>
+      </div>
     </div>
+    <audio src="./assets/background1.mp3" hidden id="background1"></audio>
   </body>
-  <script src="../dist/game.js"></script>
+  <script src="./game.js"></script>
 </html>

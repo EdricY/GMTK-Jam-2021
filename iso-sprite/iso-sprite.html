@@ -1,0 +1,26 @@
+<canvas id="canvas"></canvas>
+<canvas id="canvas2"></canvas>
+<img id="pic" src="sand.png" alt="" />
+<script>
+  const pic = document.getElementById("pic");
+  const SIZE = 64;
+  canvas = document.getElementById("canvas");
+  canvas.width = SIZE * 2;
+  canvas.height = SIZE * 2;
+  ctx = canvas.getContext("2d");
+  ctx.translate(SIZE, SIZE / 2);
+  ctx.rotate(Math.PI / 4);
+  // ctx.translate(-SIZE, -SIZE);
+  // ctx.scale(1, 0.5);
+
+  canvas2 = document.getElementById("canvas2");
+  canvas2.width = SIZE * 2;
+  canvas2.height = SIZE * 2;
+
+  ctx2 = canvas2.getContext("2d");
+  ctx2.scale(1, 0.5);
+  setTimeout(() => {
+    ctx.drawImage(pic, 0, 0);
+    ctx2.drawImage(canvas, 0, 0);
+  }, 1000);
+</script>

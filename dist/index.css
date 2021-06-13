@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #07608d;
+  background-color: #04405e;
   margin: 0;
   width: 100%;
   min-height: 100vh;
@@ -12,20 +12,56 @@ body {
   display: none !important;
 }
 
+h1 {
+  color: white;
+  text-shadow: 2px 2px rgb(2, 146, 146);
+}
+
+img {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
 button {
   color: white;
-  border: 3px solid aqua;
+  border: 3px solid rgb(46, 211, 211);
   border-radius: 3px;
   background-color: #055177;
   font-weight: bold;
   box-shadow: 2px 2px 10px #000;
   cursor: pointer;
+  padding: 5px 10px;
+  font-size: 16px;
 }
 button:hover {
   transform: scale(1.02);
 }
 button:active {
   transform: scale(1.1);
+}
+
+button[disabled] {
+  color: #777;
+  border-color: rgba(0, 255, 255, 0.433);
+  cursor: auto;
+}
+button[disabled]:hover {
+  transform: none;
+}
+
+ul {
+  padding: 0 20px;
+  margin-top: 5px;
+}
+li {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+.infoBar button {
+  font-size: 14px;
+  padding: 1px 6px;
 }
 
 #menu {
@@ -35,14 +71,19 @@ button:active {
   align-items: center;
   gap: 2em;
   min-height: 100vh;
+  color: white;
 }
 #credits {
+  color: white;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  gap: 2em;
+  gap: 1em;
   min-height: 100vh;
+}
+#credits a {
+  color: white;
 }
 
 #game {
@@ -53,7 +94,8 @@ button:active {
   height: 100vh;
   max-width: 1000px;
   margin: 0 auto;
-  width: min(100%, 60vh);
+  width: 60vh;
+  max-width: 100%;
   min-width: 500px;
 }
 
@@ -70,6 +112,7 @@ button:active {
 }
 
 .infoBar {
+  background-color: rgba(40, 87, 71, 0.535);
   color: white;
   box-sizing: border-box;
   width: 100%;
@@ -79,21 +122,35 @@ button:active {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  justify-content: flex-start;
-  gap: 0.5em;
+  justify-content: space-around;
+  gap: 0.3em;
   padding: 5px;
+  font-size: 14px;
 }
 
 .infoBox {
+  color: white;
+  background-color: rgba(40, 87, 71, 0.535);
   width: 100%;
-  height: calc(40vh - 40px);
+  min-height: 270px;
+  height: calc(40vh - 50px);
   border: 3px solid aquamarine;
   border-radius: 3px;
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: stretch;
   position: relative;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.stats {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
 .imgContainer {
@@ -109,20 +166,32 @@ button:active {
   border-radius: 0 0 3px 0;
   display: block;
   border-style: solid;
-  object-fit: contain;
   border-top: 0;
   border-left: 0;
+  object-fit: cover;
 }
 
 .infoName {
-  margin: 10px;
+  flex: 1;
+  margin: 0 5px;
+}
+
+.infoDetails {
+  flex-wrap: nowrap;
+}
+
+.residenceHalf {
+  border-left: 3px solid aquamarine;
+}
+
+.fill {
+  flex: 1;
 }
 
 .button-row {
   display: flex;
   margin-top: auto;
-  padding-top: 1em;
-  margin-bottom: 1em;
+  padding: 0.5em 0;
   width: 100%;
   justify-content: center;
   gap: 2em;
@@ -139,6 +208,32 @@ button:active {
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
+}
+.align-center {
+  align-items: center;
+}
+
+.half {
+  width: 50%;
+}
+
+.sharkimg {
+  margin: 10px auto;
+}
+
+#sharkMsg {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 45ch;
+}
+
+.text-center {
+  text-align: center;
+}
+
+#welcomeMsg {
+  margin: 10px auto;
+  max-width: 40ch;
 }
 
 .applicantList {
@@ -160,4 +255,51 @@ button:active {
 
 .space-between {
   justify-content: space-between;
+}
+
+button.flash {
+  animation: flashyborder 0.25s linear infinite;
+}
+
+span.flash {
+  animation: flashytext 0.25s linear infinite;
+}
+
+.progressBorder {
+  width: calc(100% - 20px);
+  height: 20px;
+  margin: 10px;
+  border: 2px solid black;
+}
+.progress {
+  height: 100%;
+  width: 100%;
+  background-color: red;
+}
+
+@keyframes flashyborder {
+  50% {
+    border-color: red;
+  }
+}
+
+@keyframes flashytext {
+  50% {
+    color: red;
+  }
+}
+
+#infoBox-eom {
+  justify-content: stretch;
+}
+
+.details {
+  text-align: center;
+}
+
+.propertyDetails {
+  text-align: left;
+}
+.houseDetails {
+  text-align: left;
 }

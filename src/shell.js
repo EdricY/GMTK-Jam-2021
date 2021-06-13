@@ -1,11 +1,11 @@
 import { getEl, N, TILE_S, TLONGDIAG } from "./globals";
-import { tileLocToScreenXY } from "./math";
+import { randInt, tileLocToScreenXY } from "./math";
 import { imgs } from "./load";
-import { mapData } from "./map";
+import { levelManager } from "./levelManager";
 
 const shellStretch = TLONGDIAG / 64; // imgs.grass.width
 
-const shelltime = 100;
+const shelltime = 1000;
 
 export class Shell {
   i = -1;
@@ -15,7 +15,10 @@ export class Shell {
   offsetI = Math.random() * -0.25 + 0.5;
   offsetJ = Math.random() * -0.25 + 0.5;
 
+  imgname = "shell";
+
   place() {
+    this.imgname = ["shell", "shell2", "shell3", "shell4"][randInt(0, 3)];
     let tile = null;
     this.timer = shelltime + Math.floor(Math.random() * shelltime);
     this.offsetI = Math.random() * -0.5;
@@ -23,14 +26,13 @@ export class Shell {
     do {
       this.i = Math.floor(Math.random() * N);
       this.j = Math.floor(Math.random() * N);
-      tile = mapData[this.i][this.j];
-    } while (!(tile == 0 || tile == 1 || tile == TILE_S));
+      tile = levelManager.mapNumbers[this.i][this.j];
+    } while (!(tile == TILE_S));
   }
 
   pickup() {
     this.alive = false;
     this.place();
-    console.log("pickup");
   }
 
   update() {
@@ -46,12 +48,16 @@ export class Shell {
 
     const [x, y] = tileLocToScreenXY(this.i, this.j);
     ctx.drawImage(
-      imgs.shell,
+      imgs[this.imgname],
       x - TLONGDIAG / 2 + this.offsetI,
       y - (imgs.shell.height * shellStretch) / 2 + this.offsetJ,
       TLONGDIAG,
       imgs.shell.height * shellStretch
     );
+  }
+  getAmount() {
+    const base = shellNumber.lifetimeMax / 20;
+    return randInt(base / 2, base);
   }
 }
 
@@ -67,7 +73,6 @@ export class ShellPickup {
     this.amt = 0;
   }
   trigger(x, y, amt) {
-    console.log(x, y, amt);
     this.x = x;
     this.y = y;
     this.timer = 120;
@@ -78,10 +83,11 @@ export class ShellPickup {
   }
   draw(ctx) {
     if (this.timer > 0) {
-      ctx.font = "14px sans-serif";
-      ctx.fillStyle = "black";
+      ctx.font = "bold 28px Verdana";
+      ctx.fillStyle = "#89FFD2";
       ctx.textAlign = "center";
-      ctx.fillText("+ " + this.amt + " shells", this.x, this.y - (120 - this.timer) / 10);
+
+      ctx.fillText("+ " + this.amt, this.x, this.y - (120 - this.timer) / 10);
     }
   }
 }
@@ -89,10 +95,16 @@ export const shellPickup = new ShellPickup();
 
 // controller for the html text display
 class ShellNumber {
-  actual = 0;
-  display = 0;
+  constructor() {
+    this.setup();
+  }
 
-  step = 0;
+  setup() {
+    this.actual = 0;
+    this.display = 0;
+    this.step = 0;
+    this.lifetimeMax = 0;
+  }
 
   update() {
     if (this.step != 0) {
@@ -117,9 +129,13 @@ class ShellNumber {
       console.log("not enough money");
       return;
     }
-
+    this.display = this.actual;
     this.actual += delta;
     this.step = delta / 60;
+
+    if (this.actual > this.lifetimeMax) {
+      this.lifetimeMax = this.actual;
+    }
   }
 }
 export const shellNumber = new ShellNumber();

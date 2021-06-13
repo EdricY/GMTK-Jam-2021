@@ -33,5 +33,13 @@ export function screenXYtoTileLoc(x, y) {
 // random integer x where a <= x <= b
 export function randInt(a, b) {
   const range = b - a + 1;
-  return a + Math.floor(Math.random() * range);
+  return Math.floor(a + Math.random() * range);
+}
+
+export function randNorm() {
+  return Math.random() - Math.random();
+}
+
+export function randUniform() {
+  return Math.random() * 2 - 1;
 }
